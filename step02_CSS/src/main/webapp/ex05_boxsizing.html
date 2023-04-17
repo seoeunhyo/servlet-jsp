@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type="text/css">
+
+/*
+width = width + padding(좌,우) + border(좌,우)
+height = height + padding(상,하) + border(상,하)
+*/
+
+
+.a{
+width: 300px; height:200px;
+background-color: pink;
+}
+
+.b{
+width: 300px; height:200px;
+background-color: skyblue;
+padding: 20px;
+border-style: solid dotted dashed double; /*상 우 하 좌*/
+border-color: red green blue;/*상 좌우 하*/
+border-width: 20px 30px ; /*상하 좌우*/
+border-sizing : border-box;
+}
+</style>
+</head>
+<body>
+<div class="a">box-sizing 연습</div>
+<div class="b">box-sizing 연습</div>
+
+</body>
+</html>

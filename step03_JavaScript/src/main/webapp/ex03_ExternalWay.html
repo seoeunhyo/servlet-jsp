@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<script type ="text/javascript" src = "js/basic.js"></script>
+<script type="text/javascript">
+	alert("나는 출력되어요.")
+	
+	window.onload = function(){
+		//문서(body)로딩이 완료되면!!
+		document.querySelector("#btn").onclick = btn1Check;
+		
+		//마우스 오버했을 때 
+		let btnList = document.querySelectorAll("button");
+		
+		btnList.forEach(function(btn, index){
+			console.log(btn + " , "+index);
+			btn.onmouseover = btnFun; //이벤트 등록 
+		});
+	}
+</script>
+
+</head>
+<body>
+<!-- 외부에 ~.js 만들어서 사용하기 -->
+<button id = "btn" >클릭1</button><p>
+<button>클릭2</button><p> 
+<button>클릭3</button><p>
+
+
+</body>
+</html>

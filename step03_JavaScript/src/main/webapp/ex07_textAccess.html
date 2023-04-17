@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<style type="text/css">
+
+div {
+	width: 300px;
+	height: 200px;
+	border: 1px red solid;
+	overflow: auto;
+}
+</style>
+<script type="text/javascript">
+	onload = function(){
+		//이벤트 등록하자 
+		let btnEle = document.getElementById("btn");
+		//btnEle.onclick = function(){}
+		btnEle.onclick = btnCheck;
+	}
+	
+	//버튼을 클릭했을 때 호출될 함수
+	//함수를 여러군데 많이 쓰일 것 같으면 따로 빼서 만들고, 그렇지 않다면 익명 함수를 이용하는 게 편리 
+	function btnCheck(e){
+		//입력에 값이 있는지 체크하고 있으면 그 값을 출력, div에 넣기 
+		let inputEle = document.querySelector("[name=input]");
+		if(inputEle.value == "")
+		{
+			alert("입력을 해주세요.");
+			inputEle.focus(); //커서 놓기
+			return false;
+		}
+		
+		//output에 옮기기
+		let outEle = document.querySelector("[name=output]");
+		outEle.value = inputEle.value;
+		
+		/*form양식이 아닌 태그 내부 content에 데이터를 추가할 때 (h1, p, div, span, a, td)
+		 ~.innerHTML = "값" - 마크업을 사용할 수 있음
+		 ~.innerText = "값" - 문자열로 인식
+		 */
+		 
+		 document.querySelector("#result").innerHTML +=  "<h5>"+inputEle.value+"</h5>"; 
+		// document.querySelector("h2").innerText =  "<h5>"+inputEle.value+"</h5>"; 
+				
+
+		
+		//submit = 전송의 기능 막는 방법
+		//return false;
+		
+		//첫번째 text박스 초기화
+		inputEle.value="";
+		inputEle.focus();
+		
+		e.preventDefault(); //겹치는 이벤트가 있을 때 전이되는 이벤트를 막아줄 수 있음..
+	}
+</script>
+</head>
+
+<body>
+	<h2>javaScript에서 폼 요소 접근하기</h2>
+	<form action="http://www.naver.com" method="get">
+		입력: <input type="text" name="input"><br> 
+		출력: <input type="text" name="output"><br>
+		<button id="btn">옮기기</button>
+
+	</form>
+	<hr>
+	<div id = "result"></div>
+</body>
+
+</html>

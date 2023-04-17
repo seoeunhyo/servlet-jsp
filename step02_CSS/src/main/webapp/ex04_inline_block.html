@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+<style type = "text/css">
+
+.a{
+background-color: red;
+}
+
+.b{
+	background-color: blue;
+	width: 400px; height: 200px; /*inline 요소에 가로 높이 안 된다.*/
+	margin-left : 10px;
+	margin-right: 10px;
+	margin-top: 20px;
+	margin-bottom: 10px;
+	text-align: center;
+	/*display: inline-block;inline + block*/
+	vertical-align:middle; /*block 요소에는 적용 안 됨*/
+	display: table-cell;
+	border-radius: 10px;
+}
+.c{
+background-color: green;
+}
+
+
+#a{
+background-color: red;
+}
+
+#b{
+	background-color: blue;
+	width: 400px;height:200px;
+	margin-top: 10px;
+	margin-left: 20px;
+	margin-bottom: 10px;
+	font-size:20px;
+	color : white;
+	text-align: center;
+	vertical-align: middle;
+		display: table-cell;
+	border-radius: 150px;
+	opacity: 0.5;
+}
+#c{
+background-color: green;
+/*padding-top: 20px;
+padding-left: 30px;
+padding-bottom: 50px;*/
+padding:20px
+
+/* padding: 50px - 상하좌우
+	padding: 20px 10px; - 상하 / 좌우
+	padding: 30px 10px 5px - 상 좌우 하 
+	padding: 10px 5px 2px 8px - 상 우 하 좌
+	border-style : solid dotted; - 상하 좌우
+	border-color: red green blue; 상 좌우 하 
+	
+*/
+}
+</style>
+</head>
+<body>
+<!-- 
+
+	display의 속성을 이용해서 화면에 표시 
+	
+	inline 요소: 한 줄을 차지하지 않고 화면에 표시되는 영역만큼만 차지한다.
+			    한 줄의 나머지 영역(공간)에는 다른 요소가 올 수 있다.
+			    ex) span, img, a, input, button, label
+	
+	block 요소 : 태그를 사용해서 요소를 넣을 때 한 줄을 혼자 전체가 차지하는 것 
+				해당 요소의 넓이가 100% 
+				ex) div, h1 ~ h6, p, ul, ol, form, table
+ -->
+ <span class = "a">span1</span> <span class = "b">span2</span> <span class = "c">span3</span>
+ <hr color = "red">
+ <div id= "a">div1</div> <div id= "b">div2</div> <div id= "c">div3</div>
+</body>
+</html>

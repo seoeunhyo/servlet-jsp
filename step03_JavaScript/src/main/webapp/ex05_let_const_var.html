@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+</head>
+
+<body>
+	<script type="text/javascript">
+		let a;
+		var b;
+
+		document.write("<h3>");
+
+		//템플릿 문자열 ``
+		document.write("let a = " + a + "<br>");
+		document.write(`var b = ${b}<br>`); // 표현식으로 인식을 함
+
+		//변수의 선언의 위치를 변경 
+		//var b; //선언전에 사용 가능하다!
+		//let a; 이렇게 선언전에 사용할 수 없다!
+
+		var b = "장희정" //동일한 이름을 사용할 수 있다.
+		//let a = "안녕"; //동일한 이름 두번 선언 안 된다.
+		a = "안녕";
+		document.write("let a = " + a + "<br>");
+		document.write(`var b = ${b}<br>`); // 표현식으로 인식을 함
+
+		function test() {
+			var b = "지역변수 b";
+			name = "KB"; //지역변수
+			//함수 안에서 변수를 선언할 때 var를 생략하면 전역변수가 된다. 
+
+			document.write(`지역변수 b = ${b}<br>`);
+			document.write(`전역변수 this.b = ${this.b}<br>`);
+			document.write(`지역변수 name = ${name}<br>`);
+		}
+
+		document.write("</h3>");
+
+		//함수를 호출해보자
+		test();
+		document.write(`<hr>함수 호출 후....<p>`);
+		document.write(` b = ${b}<br>`);
+		document.write(`지역변수 name = ${name}<br>`);
+
+		/*function test2(){
+			document.write(`age = ${age}<br>`);
+			var age= 20;
+			{
+				var age = 30;
+				document.write(`age = ${age}<br>`);
+			}
+			document.write(`age = ${age}<br>`);
+		}
+		document.write("<hr>")
+		test2();
+		document.write("<hr>")
+		 */
+
+		function test2() {
+			//document.write(`age = ${age}<br>`); - 선언전에 사용 불가
+			let age = 20;
+			{
+				let age = 30; //block scope을 갖는다.
+				document.write(`age = ${age}<br>`);
+			}
+			document.write(`age = ${age}<br>`);
+		}
+		function test2() {
+			alert("test2() 호출됨!");
+		}
+
+		document.write("<hr>")
+		test2();
+
+		const addr = "선릉";
+		document.write(`addr = ${addr}<br>`);
+		addr = "서울";
+		document.write("<hr>")
+	</script>
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="EUC-KR">
+<title>Insert title here</title>
+
+<script type = "text/javascript">
+	//h3태그를 클릭했을때 호출될 함수를 만들자
+	function test(){
+		alert("클릭했어요~");
+		alert("클릭했어요~");
+		alert("클릭했어요~");
+	}
+	
+	//element를 찾아서 이벤트를 적용하는 방법
+	//이벤트를 발생시킬 주체(객체)를 찾는다.
+	document.querySelector("h2").onmouseover = function(){
+		this.style.border = "double 5px blue";
+		
+	}
+	
+	
+</script>
+</head>
+<body>
+<!-- 
+	태그에 직접 이벤트 적용하기
+		on이벤트 종류 = "javaScript 문법" 
+		on이벤트 종류에서는 대소문자 가리지 않음, ""안에는 문법을 가림 
+ -->
+ 
+	<h2 onmouseover="" 
+	onmouseout= "">java Script 시작하기</h2>
+	<h3 onclick="test()"> 클릭해봐!!!</h3>
+	
+	<script type = "text/javascript">
+		//대소문자 정확하게 구분 이벤트 종류를 사용할 때는 모두 소문자로 작성
+		document.querySelector("h2").onmouseover = function(){
+		this.style.border = "double 5px blue";
+		
+	}
+		//마우스를 out 했을 때 
+		//이벤트주체.addEventListener("이벤트 종류", 함수) --> 이벤트 종류를 쓸 때 on은 쓰지 않는다.;
+		document.querySelector("h2").addEventListener("mouseout", function(){
+			this.style.border= "none";	
+		});
+	</script>
+</body>
+</html>
